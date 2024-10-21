@@ -13,10 +13,10 @@ nav:
   - "Page 3": page3.md
 
 theme:
-  name: carbon
+  # name: carbon
   # For local development use name: null + custom_dir instead of name: carbon
-  # name: null
-  # custom_dir: 'mkdocs_carbon_theme'
+  name: null
+  custom_dir: 'mkdocs_carbon_theme'
   prefix: Durera
   theme_header: g100
   theme_sidenav: g90

@@ -52,3 +52,9 @@ It's possible to only set the title for one or both of the entries if you don't 
 
 ### Associate Orphaned Page with Nav
 An orphaned page can be connected to the navigation structure by setting the `nav_title` metadata to the title of the navigation item it should be connected to.
+
+
+Fonts
+-------------------------------------------------------------------------------
+- https://fonts.google.com/specimen/IBM+Plex+Sans
+- https://fonts.google.com/specimen/IBM+Plex+Mono
