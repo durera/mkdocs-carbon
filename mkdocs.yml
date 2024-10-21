@@ -1,0 +1,27 @@
+# mkdocs serve
+
+site_name: Carbon Theme for Mkdocs
+site_url: https://durera.github.io/mkdocs-carbon
+
+repo_name: GitHub
+repo_url: https://github.com/durera/mkdocs-carbon
+edit_uri: blob/master/docs/
+
+nav:
+  - "Carbon Theme": index.md
+  - "Page 2": page2.md
+  - "Page 3": page3.md
+
+theme:
+  name: carbon
+  # For local development use name: null + custom_dir instead of name: carbon
+  # name: null
+  # custom_dir: 'mkdocs_carbon_theme'
+  prefix: Durera
+  theme_header: g100
+  theme_sidenav: g90
+
+markdown_extensions:
+  - toc:
+      permalink: "¤"
+  - admonition

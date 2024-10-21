@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mkdocs-carbon"
+version = "1.0.1"
+description = "Carbon theme for MkDocs"
+readme = "README.md"
+license = "EPL-2.0"
+authors = [
+    {name = "David Parker", email = "durera@gmail.com"},
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Web Environment",
+    "Framework :: MkDocs",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: Eclipse Public License 2.0 (EPL-2.0)",
+    "Operating System :: OS Independent",
+    "Topic :: Documentation",
+]
+dependencies = [
+    "mkdocs >= 1.5",
+]
+
+[project.urls]
+Source = "https://github.com/durera/mkdocs-carbon"
+
+[project.entry-points."mkdocs.themes"]
+carbon = "mkdocs_carbon_theme"
+
+[tool.hatch.build]
+include = ["/mkdocs_carbon_theme"]

@@ -1,0 +1,10 @@
+# Theme configuration
+# -----------------------------------------------------------------------------
+include_search_page: false
+
+# Defaults for additional properties
+# -----------------------------------------------------------------------------
+prefix: Carbon
+
+theme_header: g100
+theme_sidenav: g10
