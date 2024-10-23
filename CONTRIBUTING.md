@@ -5,6 +5,8 @@ Carbon Design System theme for mkdocs
 
 Install and Serve
 -------------------------------------------------------------------------------
+Not everything works the same when you use `custom_dir`, e.g. `mkdocs_theme.yml` is not processed.
+
 ```
 python -m pip install --no-dependencies . && mkdocs serve
 ```

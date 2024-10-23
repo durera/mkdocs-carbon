@@ -1,6 +1,6 @@
 # Theme configuration
 # -----------------------------------------------------------------------------
-include_search_page: false
+include_search_page: true
 
 # Defaults for additional properties
 # -----------------------------------------------------------------------------

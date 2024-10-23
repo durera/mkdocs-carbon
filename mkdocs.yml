@@ -20,6 +20,7 @@ theme:
   prefix: Durera
   theme_header: g100
   theme_sidenav: g90
+  include_search_page: true
 
 markdown_extensions:
   - toc:
