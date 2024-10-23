@@ -4,6 +4,12 @@ mkdocs-carbon
 
 Very much in beta state right now, contributions welcomed.
 
+
+Examples
+-------------------------------------------------------------------------------
+- [IBM Maximo Application Suite CLI Documentation](https://ibm-mas.github.io/cli/)
+
+
 Installation
 -------------------------------------------------------------------------------
 
