@@ -21,6 +21,13 @@ theme:
   theme_header: g100
   theme_sidenav: g90
   include_search_page: true
+  header_nav_items:
+    - title: View on Github
+      url: https://github.com/durera/mkdocs-carbon
+      active: true
+    - title: View on PyPi
+      url: https://pypi.org/project/mkdocs-carbon/
+      target: _new
 
 markdown_extensions:
   - toc:

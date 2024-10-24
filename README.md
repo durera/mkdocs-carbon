@@ -1,8 +1,16 @@
 mkdocs-carbon
 ===============================================================================
+[![PyPI - Version](https://img.shields.io/pypi/v/mkdocs-carbon)](https://pypi.org/project/mkdocs-carbon/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/mkdocs-carbon)](https://pypi.org/project/mkdocs-carbon/)
+[![PyPI - Downloads](https://pepy.tech/badge/mkdocs-carbon)](https://pepy.tech/project/mkdocs-carbon)
+
 [Carbon Design System](https://github.com/carbon-design-system/carbon) theme for [mkdocs](https://github.com/mkdocs/mkdocs).
 
 Very much in beta state right now, contributions welcomed.
+
+- `v1.2` Support for Header Navigation Menu
+- `v1.1` Support for Search
+- `v1.0` Initial Release
 
 
 Examples
@@ -26,11 +34,19 @@ theme:
   prefix: Durera
   theme_header: g100
   theme_sidenav: g90
+  header_nav_items:
+    - title: View on Github
+      url: https://github.com/durera/mkdocs-carbon
+      active: true
+    - title: View on PyPi
+      url: https://pypi.org/project/mkdocs-carbon/
+      target: _new
 
 markdown_extensions:
   - toc:
       permalink: "¤"
 ```
+
 
 Theme Configuration
 -------------------------------------------------------------------------------
@@ -42,6 +58,11 @@ Easily switch between Carbon themes using `theme_sidenav` and `theme_header`, th
 
 ![alt text](docs/images/themes-1.png)
 ![alt text](docs/images/themes-2.png)
+
+### Header Navigation Menu
+The header navigation menu can be enabled by defining `header_nav_items` as a list of objects with `url` and `title`.  Optionally control where the links open using `target`, or set a navigation item as active by adding `active` set to `true`.
+
+![alt text](docs/images/header-nav-items.png)
 
 
 Optional Page Metadata
@@ -62,5 +83,7 @@ An orphaned page can be connected to the navigation structure by setting the `na
 
 Fonts
 -------------------------------------------------------------------------------
-- https://fonts.google.com/specimen/IBM+Plex+Sans
-- https://fonts.google.com/specimen/IBM+Plex+Mono
+Fonts are packaged in the theme itself:
+
+- [IBM Plex Sans (Light)](https://fonts.google.com/specimen/IBM+Plex+Sans)
+- [IBM Plex Mono (Light)](https://fonts.google.com/specimen/IBM+Plex+Mono)
