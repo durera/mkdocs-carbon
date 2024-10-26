@@ -1,4 +1,6 @@
 name: Build Documentation
+permissions:
+  contents: write
 on:
   push:
     branches:
