@@ -1,3 +1,6 @@
+.venv:
+	python3 -m venv .venv
+
 # Build the Python package
 # -----------------------------------------------------------------------------
 clean:
