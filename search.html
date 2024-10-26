@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Carbon Theme for Mkdocs</title>
+
+    <!-- Pure CSS (https://pure-css.github.io/) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/theme.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="./js/theme.js"></script>
+
+    <!-- Carbon theme zones (white, g10, g90, g100) -->
+    <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon/web-components/tag/latest/themes.css" />
+
+    <!-- The Carbon web-components/framework -->
+    <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.15.0/ui-shell.min.js"></script>
+    <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.15.0/breadcrumb.min.js"></script>
+    <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.15.0/select.min.js"></script>
+    <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.15.0/tabs.min.js"></script>
+    <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.15.0/search.min.js"></script>
+
+    <!-- HighlightJS code formatting support -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <!-- Required by MkDocs search -->
+    <script>var base_url = ".";</script>
+
+    <!-- User defined extras -->
+    
+  <script>var base_url = '.';</script>
+
+
+    
+
+    
+    <script src="./search/main.js"></script>
+    
+  </head>
+
+  <body>
+    <cds-header aria-label="Carbon Theme for Mkdocs" class="cds-theme-zone-g100">
+      <cds-header-menu-button button-label-active="Close menu" button-label-inactive="Open menu"></cds-header-menu-button>
+      <cds-header-name href="." prefix="Durera">Carbon Theme for Mkdocs</cds-header-name>
+      <cds-header-nav menu-bar-label="Durera Carbon Theme for Mkdocs">
+          <cds-header-nav-item is-active target="" href="https://github.com/durera/mkdocs-carbon">View on Github</cds-header-nav-item>
+          <cds-header-nav-item  target="_new" href="https://pypi.org/project/mkdocs-carbon/">View on PyPi</cds-header-nav-item>
+      </cds-header-nav>
+
+      <div class="cds--header__global">
+        <cds-search id="header-search" label-text="Search" cds-search-input="search-event" expandable></cds-search>
+      </div>
+      <script>
+        var el = document.getElementById("header-search");
+        el.addEventListener("cds-search-input", function (ev) {
+          console.info(ev.detail.value)
+          document.getElementById("header-search-value").setAttribute("value", ev.detail.value);
+        });
+        el.addEventListener('keydown', function (ev) {
+          if (ev.key === 'Enter') {
+            location.href="./search.html?q=" + document.querySelector("#header-search").shadowRoot.querySelector("#input").value;
+          }
+        });
+      </script>
+    </cds-header>
+
+    <cds-side-nav aria-label="Side navigation" class="cds-theme-zone-g90" expanded>
+      <cds-side-nav-items>
+        
+          
+  <cds-side-nav-menu-item href="./." >
+    Carbon Theme
+  </cds-side-nav-menu-item>
+
+        
+          
+  <cds-side-nav-menu-item href="./page2/" >
+    Page 2
+  </cds-side-nav-menu-item>
+
+        
+          
+  <cds-side-nav-menu-item href="./page3/" >
+    Page 3
+  </cds-side-nav-menu-item>
+
+        
+      </cds-side-nav-items>
+    </cds-side-nav>
+
+    <div id="breadcrumbs" class="rst-content"><cds-breadcrumb no-trailing-slash>
+  <cds-breadcrumb-item>
+    <cds-breadcrumb-link href="./.">Home</cds-breadcrumb-link>
+  </cds-breadcrumb-item>
+</cds-breadcrumb>
+    </div>
+
+    <div id="main-content" class="rst-content">
+      
+  <h1 id="search">Search Results</h1>
+
+  <form id="content_search" action="search.html">
+    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+    <input name="q" id="mkdocs-search-query" type="text" class="search_input search-query ui-autocomplete-input" placeholder="Search the Docs" autocomplete="off">
+  </form>
+
+  <div id="mkdocs-search-results">
+    Sorry, page not found.
+  </div>
+
+    </div>
+    <!-- <div id="footer" class="rst-content">
+      Built with mkdocs v1.6.1 (2024-10-26 17:42:11.975240+00:00)
+    </div> -->
+  </body>
+</html>
