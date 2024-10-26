@@ -1,5 +1,10 @@
+# Build the Python package
+# -----------------------------------------------------------------------------
 clean:
 	rm -rf dist/mkdocs_carbon-*
+
+install:
+	. .venv/bin/activate && python -m pip install .
 
 build: clean
 	. .venv/bin/activate && python -m build .
@@ -7,5 +12,13 @@ build: clean
 release: build
 	. .venv/bin/activate && python -m twine upload dist/*
 
-serve:
+# Build the documentation site
+# -----------------------------------------------------------------------------
+docs-install-deps: install
+	. .venv/bin/activate && python -m pip install -q mkdocs-glightbox mkdocs-redirects
+
+docs-build:
+	. .venv/bin/activate && mkdocs build --verbose --clean --strict
+
+docs-serve:
 	. .venv/bin/activate && mkdocs serve -w docs -w mkdocs_carbon_theme

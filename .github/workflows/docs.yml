@@ -1,0 +1,25 @@
+name: Build Documentation
+on:
+  push:
+    branches:
+      - 'stable'
+    tags-ignore:
+      - '**'
+jobs:
+  deploy-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install and Build
+        run: |
+          make docs-install-deps
+          make docs-build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.7
+        if: github.ref == 'refs/heads/master'
+        with:
+          branch: gh-pages
+          folder: site

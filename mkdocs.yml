@@ -13,14 +13,13 @@ nav:
   - "Page 3": page3.md
 
 theme:
-  # name: carbon
-  # For local development use name: null + custom_dir instead of name: carbon
-  name: null
-  custom_dir: 'mkdocs_carbon_theme'
+  name: carbon
+  # For local development use name: null + custom_dir instead of "name: carbon"
+  # name: null
+  # custom_dir: 'mkdocs_carbon_theme'
   prefix: Durera
   theme_header: g100
   theme_sidenav: g90
-  include_search_page: true
   header_nav_items:
     - title: View on Github
       url: https://github.com/durera/mkdocs-carbon
