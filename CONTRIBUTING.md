@@ -15,6 +15,10 @@ python -m pip install --no-dependencies . && mkdocs serve
 Build
 -------------------------------------------------------------------------------
 ```
+make build
+```
+
+```
 python -m pip install build
 rm -f dist/mkdocs_carbon-*
 python -m build .
@@ -23,6 +27,10 @@ python -m build .
 
 Release
 -------------------------------------------------------------------------------
+```
+make release
+```
+
 ```
 python -m pip install --upgrade twine
 python -m twine upload dist/*
