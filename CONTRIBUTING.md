@@ -27,6 +27,9 @@ python -m build .
 
 Release
 -------------------------------------------------------------------------------
+Versioning is not automatic, remember to update `version` in [pyproject.toml](pyproject.toml) as part of the preparation for release.
+
+
 ```
 make release
 ```
