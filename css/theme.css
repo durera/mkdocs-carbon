@@ -93,6 +93,7 @@ div#breadcrumbs {
     border-bottom: 1px solid #333;
     z-index: 8000;
 }
+
 div#main-content {
     margin-left: 18em;
     padding-top: 5em;
@@ -226,4 +227,10 @@ div#footer {
 }
 .rst-content table tr:nth-child(odd) {
     background-color: #eee;
+}
+
+
+cds-accordion-item {
+    border: 1px solid #666 !important;
+    margin-bottom: 5px;
 }
