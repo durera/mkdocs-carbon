@@ -9,8 +9,9 @@ edit_uri: blob/master/docs/
 
 nav:
   - "Carbon Theme": index.md
-  - "Page 2": section2/page2.md
-  - "Page 3": section2/page3.md
+  - "Group":
+    - "Page 2": section2/page2.md
+    - "Page 3": section2/page3.md
 
 theme:
   name: carbon
