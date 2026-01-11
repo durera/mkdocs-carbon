@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -25,7 +25,8 @@
     <script type="module" src="https://1.www.s81c.com/common/carbon/web-components/version/v2.15.0/search.min.js"></script>
 
     <!-- HighlightJS code formatting support -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+    <link rel="stylesheet" id="hljs-light" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+    <link rel="stylesheet" id="hljs-dark" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
     <script>hljs.highlightAll();</script>
@@ -44,8 +45,9 @@
     
   </head>
 
-  <body>
-    <cds-header aria-label="Carbon Theme for Mkdocs" class="cds-theme-zone-g100">
+  <body class="md-grid" data-theme-default="g100">
+    <!-- Header -->
+    <cds-header aria-label="Carbon Theme for Mkdocs" class="md-header">
       <cds-header-menu-button button-label-active="Close menu" button-label-inactive="Open menu"></cds-header-menu-button>
       <cds-header-name href="." prefix="Durera">Carbon Theme for Mkdocs</cds-header-name>
       <cds-header-nav menu-bar-label="Durera Carbon Theme for Mkdocs">
@@ -54,6 +56,31 @@
       </cds-header-nav>
 
       <div class="cds--header__global">
+<div class="md-theme-toggle" data-theme-default="g100">
+  <button class="md-theme-toggle__button" aria-label="Toggle theme" title="Toggle theme">
+    <svg class="md-theme-toggle__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+    </svg>
+  </button>
+  <div class="md-theme-toggle__menu" hidden>
+    <button class="md-theme-toggle__option" data-theme="white">
+      <span class="md-theme-toggle__label">Light</span>
+      <span class="md-theme-toggle__preview md-theme-toggle__preview--white"></span>
+    </button>
+    <button class="md-theme-toggle__option" data-theme="g10">
+      <span class="md-theme-toggle__label">Light Gray</span>
+      <span class="md-theme-toggle__preview md-theme-toggle__preview--g10"></span>
+    </button>
+    <button class="md-theme-toggle__option" data-theme="g90">
+      <span class="md-theme-toggle__label">Dark Gray</span>
+      <span class="md-theme-toggle__preview md-theme-toggle__preview--g90"></span>
+    </button>
+    <button class="md-theme-toggle__option" data-theme="g100">
+      <span class="md-theme-toggle__label">Dark</span>
+      <span class="md-theme-toggle__preview md-theme-toggle__preview--g100"></span>
+    </button>
+  </div>
+</div>
         <cds-search id="header-search" label-text="Search" cds-search-input="search-event" expandable></cds-search>
       </div>
       <script>
@@ -74,45 +101,62 @@
           <cds-header-nav-item href="https://github.com/durera/mkdocs-carbon/blob/master/docs/index.md">Edit on GitHub</cds-header-nav-item>
         </cds-header-nav>
       
-
     </cds-header>
 
-    <cds-side-nav aria-label="Side navigation" class="cds-theme-zone-g90">
-      <cds-side-nav-items>
-        
-          
+    <!-- Main container with three-column layout -->
+    <div class="md-container">
+      <!-- Left sidebar - Navigation -->
+      <aside class="md-sidebar md-sidebar--primary" data-md-component="sidebar">
+        <div class="md-sidebar__scrollwrap">
+          <div class="md-sidebar__inner">
+            <cds-side-nav aria-label="Side navigation">
+              <cds-side-nav-items>
+                
+                  
   <cds-side-nav-menu-item href="." active expanded>
     Carbon Theme
   </cds-side-nav-menu-item>
 
-        
-          
+                
+                  
   <cds-side-nav-menu-item href="section2/page2/" >
     Page 2
   </cds-side-nav-menu-item>
 
-        
-          
+                
+                  
   <cds-side-nav-menu-item href="section2/page3/" >
     Page 3
   </cds-side-nav-menu-item>
 
-        
-      </cds-side-nav-items>
-    </cds-side-nav>
+                
+              </cds-side-nav-items>
+            </cds-side-nav>
+          </div>
+        </div>
+      </aside>
 
-    <div id="breadcrumbs" class="rst-content"><cds-breadcrumb no-trailing-slash>
+      <!-- Main content area -->
+      <div class="md-content" data-md-component="content">
+        <article class="md-content__inner">
+          <!-- Breadcrumbs -->
+          <div class="md-breadcrumbs"><cds-breadcrumb no-trailing-slash>
   <cds-breadcrumb-item>
     <cds-breadcrumb-link href=".">Home</cds-breadcrumb-link>
   </cds-breadcrumb-item>
-
-  <cds-breadcrumb-item aria-current="page">
-    <cds-breadcrumb-link href="#carbon-design-system-theme-for-mkdocs">Carbon Design System Theme for Mkdocs</cds-breadcrumb-link>
+  <cds-breadcrumb-item>
+    <cds-breadcrumb-link href="#carbon-design-system-theme-for-mkdocs">Carbon Design System Theme for MkDocs</cds-breadcrumb-link>
   </cds-breadcrumb-item>
 
-  <cds-breadcrumb-item>
-    <cds-select id="breadcrumbs-toc" class="cds-theme-zone-g10" inline placeholder="..." oninput="changeAnchor(this.value)">
+  <cds-breadcrumb-item aria-current="page">
+    <cds-select id="breadcrumbs-toc" inline placeholder="..." oninput="changeAnchor(this.value)">
     
+    
+      <cds-select-item value="#whats-new-in-v20">✨ What's New in v2.0</cds-select-item>
+    
+      <cds-select-item value="#modern-layout">🎨 Modern Layout</cds-select-item>
+    
+      <cds-select-item value="#getting-started">📚 Getting Started</cds-select-item>
     
       <cds-select-item value="#section-1">Section 1</cds-select-item>
     
@@ -122,14 +166,64 @@
     
       <cds-select-item value="#section-4">Section 4</cds-select-item>
     
-  </cds-select>
+    </cds-select>
   </cds-breadcrumb-item>
 </cds-breadcrumb>
-    </div>
+          </div>
 
-    <div id="main-content" class="rst-content">
-      
-      <h1 id="carbon-design-system-theme-for-mkdocs">Carbon Design System Theme for Mkdocs<a class="headerlink" href="#carbon-design-system-theme-for-mkdocs" title="Permanent link">¤</a></h1>
+          <!-- Page content -->
+          <div class="rst-content">
+            
+            <h1 id="carbon-design-system-theme-for-mkdocs">Carbon Design System Theme for MkDocs<a class="headerlink" href="#carbon-design-system-theme-for-mkdocs" title="Permanent link">&para;</a></h1>
+<p>Welcome to the modernized Carbon Design System theme for MkDocs! This theme brings the power and elegance of IBM's Carbon Design System to your documentation with a modern, responsive three-column layout.</p>
+<h2 id="whats-new-in-v20">✨ What's New in v2.0<a class="headerlink" href="#whats-new-in-v20" title="Permanent link">&para;</a></h2>
+<p>The theme has been completely modernized with a layout comparable to Material for MkDocs while maintaining the Carbon Design System aesthetic.</p>
+<h3 id="phase-1-2-layout-navigation">Phase 1 &amp; 2: Layout &amp; Navigation<a class="headerlink" href="#phase-1-2-layout-navigation" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Three-column responsive layout</strong> - Navigation, content, and table of contents</li>
+<li><strong>Sticky TOC sidebar</strong> - Always visible with automatic scroll highlighting</li>
+<li><strong>Navigation state persistence</strong> - Remembers your expanded menu items</li>
+<li><strong>Previous/Next navigation</strong> - Easy page-to-page navigation</li>
+<li><strong>Improved mobile experience</strong> - Touch-optimized with slide-out drawer</li>
+<li><strong>Optimized readability</strong> - Content width limited to 900px for comfortable reading</li>
+</ul>
+<h3 id="phase-3-interactive-features">Phase 3: Interactive Features<a class="headerlink" href="#phase-3-interactive-features" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Back to top button</strong> - Floating action button for quick navigation</li>
+<li><strong>Copy to clipboard</strong> - One-click code copying with visual feedback</li>
+<li><strong>Enhanced admonitions</strong> - Icons for all admonition types (note, tip, warning, danger)</li>
+<li><strong>Keyboard shortcuts</strong> - Press <code>/</code> to focus search</li>
+<li><strong>Smooth scrolling</strong> - Enhanced anchor navigation</li>
+</ul>
+<h3 id="phase-4-polish-optimization">Phase 4: Polish &amp; Optimization<a class="headerlink" href="#phase-4-polish-optimization" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Carbon type scale</strong> - Complete IBM typography system with 8 font sizes</li>
+<li><strong>100+ CSS variables</strong> - Full control over colors, spacing, typography</li>
+<li><strong>Reduced motion support</strong> - Respects <code>prefers-reduced-motion</code> for accessibility</li>
+<li><strong>Enhanced code blocks</strong> - Gradient backgrounds, better syntax highlighting</li>
+<li><strong>Performance optimized</strong> - Efficient CSS selectors and minimal JavaScript</li>
+</ul>
+<h2 id="modern-layout">🎨 Modern Layout<a class="headerlink" href="#modern-layout" title="Permanent link">&para;</a></h2>
+<p>The new layout provides an optimal reading experience across all devices:</p>
+<h3 id="desktop-1280px">Desktop (≥1280px)<a class="headerlink" href="#desktop-1280px" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Left sidebar: Collapsible navigation (256px)</li>
+<li>Center: Content area (max 900px)</li>
+<li>Right sidebar: Sticky table of contents (256px)</li>
+</ul>
+<h3 id="tablet-768px-1279px">Tablet (768px-1279px)<a class="headerlink" href="#tablet-768px-1279px" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Left sidebar: Collapsible navigation</li>
+<li>Center: Full-width content</li>
+<li>TOC: Hidden (integrated into content flow)</li>
+</ul>
+<h3 id="mobile-768px">Mobile (&lt;768px)<a class="headerlink" href="#mobile-768px" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Slide-out navigation drawer</li>
+<li>Full-width content</li>
+<li>Collapsible TOC at top of page</li>
+</ul>
+<h2 id="getting-started">📚 Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
 <p>Lorem ipsum odor amet, <code>consectetuer adipiscing elit</code>. Volutpat curae dis elit dolor <a href="section2/page2/">elementum nullam eu fusce</a>. Ac tellus varius netus cursus lacus pulvinar tellus aliquam habitant. Cras odio vitae aptent netus dis mi maecenas. Cursus habitant suspendisse facilisis, mollis netus platea nisi. Sociosqu magnis diam gravida diam quisque <a href="section2/page3/">bibendum auctor varius</a>. Vel molestie ultrices nisi finibus diam elit placerat dolor. Euismod ut conubia metus hendrerit taciti posuere placerat elementum.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -150,7 +244,7 @@
 <blockquote>
 <p>Facilisi lectus massa neque sed malesuada. Inceptos bibendum a cras parturient taciti lacinia porta. Senectus sem aptent metus adipiscing vivamus. Egestas aliquam ac neque volutpat fames cras consequat, praesent curae. Potenti in id maximus eget vel ad proin sem. Fringilla pellentesque curabitur nisi venenatis nostra conubia risus? Litora augue bibendum montes proin; sagittis justo. Nullam fringilla lacinia neque aenean massa pharetra. Lectus aptent dui dapibus ipsum faucibus a. Risus pulvinar diam conubia habitasse pharetra.</p>
 </blockquote>
-<h2 id="section-1">Section 1<a class="headerlink" href="#section-1" title="Permanent link">¤</a></h2>
+<h2 id="section-1">Section 1<a class="headerlink" href="#section-1" title="Permanent link">&para;</a></h2>
 <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Neque malesuada platea felis erat maximus ultrices quis nibh malesuada. Nisl vehicula adipiscing nisl tincidunt id, dignissim maecenas. Erat consectetur platea urna; metus senectus nascetur ante. Eleifend bibendum in a; egestas malesuada scelerisque. In interdum faucibus fringilla amet velit inceptos imperdiet scelerisque. Amet efficitur mollis sit, urna maecenas elit libero. At aliquet imperdiet congue et inceptos imperdiet; cursus imperdiet tellus! Metus orci at egestas hendrerit ornare vehicula in fames.</p>
 <table>
 <thead>
@@ -190,7 +284,7 @@ print(&quot;Hello World&quot;)
 sys.exit(0)
 </code></pre>
 <p>Facilisi ac porttitor ornare facilisis fringilla mollis ut justo. Maximus augue quis torquent inceptos mi. Blandit cras dui cubilia magna donec aliquam quam aptent. Parturient tincidunt natoque iaculis vel erat ac. Malesuada aptent rutrum purus sagittis mollis morbi. Diam nascetur integer finibus ligula tincidunt lacus. Vivamus imperdiet placerat ridiculus etiam inceptos ligula. Tristique nibh consectetur enim lacus gravida felis nulla vitae. Molestie augue morbi odio odio egestas cubilia.</p>
-<h2 id="section-2">Section 2<a class="headerlink" href="#section-2" title="Permanent link">¤</a></h2>
+<h2 id="section-2">Section 2<a class="headerlink" href="#section-2" title="Permanent link">&para;</a></h2>
 <p><cds-tabs trigger-content="Select an item" value="1">
   <cds-tab id="tab-1" target="panel-1" value="1">Tab 1</cds-tab>
   <cds-tab id="tab-2" target="panel-2" value="2">Tab 2</cds-tab>
@@ -204,10 +298,10 @@ sys.exit(0)
   </div>
 </div>
 
-<h3 id="sub-section-21">Sub-Section 2.1<a class="headerlink" href="#sub-section-21" title="Permanent link">¤</a></h3>
+<h3 id="sub-section-21">Sub-Section 2.1<a class="headerlink" href="#sub-section-21" title="Permanent link">&para;</a></h3>
 <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Risus netus viverra magna lacinia pretium per sagittis urna ac. Maecenas taciti velit fringilla posuere parturient praesent. Maximus sollicitudin class habitant aenean aptent. Tellus blandit sagittis; convallis velit purus tristique ad. Eleifend elementum sodales risus commodo; taciti varius euismod tempus.</p>
 <p>Primis molestie aptent rhoncus; auctor consectetur donec cubilia lobortis. Feugiat netus fames semper, nulla dui mattis. Rutrum amet taciti dui ridiculus cubilia congue. Tellus lectus class magna ligula eros. Turpis primis ultricies class dis velit convallis tincidunt ornare efficitur. Suspendisse maximus nisl feugiat condimentum ligula at sem molestie curabitur. Ultrices eu lacinia dignissim parturient per faucibus. Mollis vitae interdum dictumst eleifend eleifend hendrerit cursus nulla.</p>
-<h3 id="sub-section-22">Sub-Section 2.2<a class="headerlink" href="#sub-section-22" title="Permanent link">¤</a></h3>
+<h3 id="sub-section-22">Sub-Section 2.2<a class="headerlink" href="#sub-section-22" title="Permanent link">&para;</a></h3>
 <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Nec tempus praesent faucibus est et tempor congue porttitor eu. Natoque dolor pulvinar feugiat viverra; nascetur praesent taciti. Sollicitudin vestibulum commodo habitant, lobortis maecenas urna suspendisse. Viverra purus facilisi montes felis pellentesque nam rhoncus. Porta magna morbi magnis eget mus luctus nullam cursus senectus. Dolor praesent per orci sollicitudin, diam rutrum velit. Felis penatibus sit varius vivamus mattis facilisis curae ante. Elit ligula sed curae faucibus inceptos etiam amet.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -219,7 +313,7 @@ sys.exit(0)
 <p>Eleifend fames netus felis donec a tincidunt hendrerit pretium. Fermentum velit commodo faucibus fusce pretium class morbi eros fames. Cursus condimentum praesent massa tempor hac purus porttitor porta. Sodales euismod interdum fringilla eget; ornare ex facilisi. Gravida netus potenti laoreet quisque leo. Lacinia nisl placerat sem per montes nascetur rutrum. Ultrices arcu viverra, at consequat ultrices facilisis vivamus.</p>
 </div>
 <p>Nibh lobortis lacinia integer augue nam id eros. Mauris hac tristique accumsan; amet sodales gravida? Porttitor ridiculus eu cubilia ornare eleifend arcu. Ad primis per enim quisque mi suspendisse auctor. Consequat magnis mi a curabitur ut taciti. Neque sodales vehicula conubia sit nascetur. Natoque mus nisl habitasse magnis dui iaculis molestie lacinia. Aliquam torquent velit; vulputate et platea aenean. Gravida tellus nostra maecenas sollicitudin eros justo ad leo?</p>
-<h2 id="section-3">Section 3<a class="headerlink" href="#section-3" title="Permanent link">¤</a></h2>
+<h2 id="section-3">Section 3<a class="headerlink" href="#section-3" title="Permanent link">&para;</a></h2>
 <div>
 <cds-accordion>
   <cds-accordion-item title="Section 1 title">
@@ -234,7 +328,7 @@ sys.exit(0)
 </cds-accordion>
 </div>
 
-<h2 id="section-4">Section 4<a class="headerlink" href="#section-4" title="Permanent link">¤</a></h2>
+<h2 id="section-4">Section 4<a class="headerlink" href="#section-4" title="Permanent link">&para;</a></h2>
 <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Amet porttitor integer taciti nulla aptent est. Bibendum ornare sed volutpat dignissim mi auctor maximus mus vitae. Mi vehicula sollicitudin pharetra elementum natoque faucibus et sed risus. Proin cursus aliquam consectetur litora habitasse malesuada. Id eget tempus habitasse leo bibendum. Inceptos nullam consequat ad; libero dignissim adipiscing. Fames vel semper posuere; purus curabitur elementum taciti felis. Primis ad morbi viverra egestas duis augue facilisi. Hac quis per libero mattis torquent orci conubia.</p>
 <p>Parturient fames etiam nibh nunc metus vulputate penatibus? Aptent lorem volutpat laoreet tempor eget, erat aliquet curae risus. Posuere maximus imperdiet eleifend lectus mi a penatibus habitasse. Velit quis sed nam urna eu mi volutpat. Aenean urna venenatis metus luctus dolor. Libero ut vel luctus fusce tortor luctus. Nec dignissim dolor consectetur lacinia ipsum libero vulputate himenaeos. Ullamcorper sem semper feugiat quis; class augue id. Molestie dapibus porttitor eleifend nascetur semper ex ullamcorper.</p>
 <p>Ridiculus ante nisl habitant velit turpis porta magna urna id. Ex ad vehicula maximus hendrerit scelerisque potenti. Fermentum at dolor convallis ex vulputate fames gravida curae. In primis mollis commodo efficitur commodo tristique semper. Nec turpis neque ipsum, nisl sit semper. Sem sit et himenaeos consequat enim dolor tristique; proin ultricies. Consectetur consectetur litora condimentum vulputate a hac iaculis odio.</p>
@@ -243,10 +337,135 @@ sys.exit(0)
 <p>Sagittis taciti urna facilisi quis nec sem habitant. Vitae posuere lacinia tincidunt sodales sodales parturient egestas! In cursus dictum scelerisque himenaeos nam fringilla quis. Justo nullam ultricies lacinia ante erat fermentum mi. Sollicitudin metus justo inceptos ex vestibulum. Pretium urna non viverra commodo non; pharetra tortor. Sodales varius lacus curabitur ligula fames turpis aliquet laoreet hendrerit.</p>
 <p>Rhoncus faucibus libero ullamcorper et ridiculus interdum magnis commodo. Platea egestas scelerisque etiam aliquam tempus vel. Vivamus auctor finibus senectus curabitur taciti ligula suscipit sed proin. Finibus himenaeos quam tincidunt lectus netus mollis, aptent pretium commodo. Eros tellus consectetur rutrum litora efficitur commodo iaculis curabitur. Pharetra vivamus velit rutrum aptent, finibus interdum torquent ligula in. Maximus nullam malesuada potenti enim curabitur erat leo tortor? Justo dis maximus natoque quis inceptos sollicitudin mus fusce. Ipsum ornare ut mauris morbi finibus commodo? Hendrerit phasellus efficitur consectetur risus nisl integer faucibus.</p>
 <p>Id vehicula per netus ullamcorper tempus nunc molestie tincidunt tincidunt. Posuere consequat eros scelerisque, nascetur mattis ultricies leo commodo. Laoreet hendrerit tortor lectus platea velit. Scelerisque ridiculus aliquet vel nec turpis morbi fusce metus. Tristique ut ac semper netus libero. Tincidunt metus lacinia curae nullam suspendisse tristique. Amet tortor platea arcu laoreet fringilla vulputate torquent pellentesque.</p>
-      
+            
+          </div>
+
+          <!-- Navigation footer (prev/next) -->
+<nav class="md-footer-nav" aria-label="Footer navigation">
+  <div class="md-footer-nav__inner">
+    <a href="section2/page2/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+      <div class="md-footer-nav__direction">
+        <span>Next</span>
+        <svg class="md-footer-nav__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+        </svg>
+      </div>
+      <div class="md-footer-nav__title">
+        <span class="md-footer-nav__title-text">Page 2</span>
+      </div>
+    </a>
+  </div>
+</nav>
+        </article>
+      </div>
+
+      <!-- Right sidebar - Table of Contents -->
+      <aside class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<nav class="md-sidebar md-sidebar--secondary" aria-label="Table of contents">
+  <div class="md-sidebar__scrollwrap">
+    <div class="md-sidebar__inner">
+      <div class="md-toc">
+        <div class="md-toc__title">On this page</div>
+        <ul class="md-toc__list">
+            <li class="md-toc__item">
+              <a href="#carbon-design-system-theme-for-mkdocs" class="md-toc__link" data-md-level="1">
+                Carbon Design System Theme for MkDocs
+              </a>
+                <ul class="md-toc__list">
+                    <li class="md-toc__item">
+                      <a href="#whats-new-in-v20" class="md-toc__link" data-md-level="2">
+                        ✨ What's New in v2.0
+                      </a>
+                        <ul class="md-toc__list">
+                            <li class="md-toc__item">
+                              <a href="#phase-1-2-layout-navigation" class="md-toc__link" data-md-level="3">
+                                Phase 1 &amp; 2: Layout &amp; Navigation
+                              </a>
+                            </li>
+                            <li class="md-toc__item">
+                              <a href="#phase-3-interactive-features" class="md-toc__link" data-md-level="3">
+                                Phase 3: Interactive Features
+                              </a>
+                            </li>
+                            <li class="md-toc__item">
+                              <a href="#phase-4-polish-optimization" class="md-toc__link" data-md-level="3">
+                                Phase 4: Polish &amp; Optimization
+                              </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="md-toc__item">
+                      <a href="#modern-layout" class="md-toc__link" data-md-level="2">
+                        🎨 Modern Layout
+                      </a>
+                        <ul class="md-toc__list">
+                            <li class="md-toc__item">
+                              <a href="#desktop-1280px" class="md-toc__link" data-md-level="3">
+                                Desktop (≥1280px)
+                              </a>
+                            </li>
+                            <li class="md-toc__item">
+                              <a href="#tablet-768px-1279px" class="md-toc__link" data-md-level="3">
+                                Tablet (768px-1279px)
+                              </a>
+                            </li>
+                            <li class="md-toc__item">
+                              <a href="#mobile-768px" class="md-toc__link" data-md-level="3">
+                                Mobile (&lt;768px)
+                              </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="md-toc__item">
+                      <a href="#getting-started" class="md-toc__link" data-md-level="2">
+                        📚 Getting Started
+                      </a>
+                    </li>
+                    <li class="md-toc__item">
+                      <a href="#section-1" class="md-toc__link" data-md-level="2">
+                        Section 1
+                      </a>
+                    </li>
+                    <li class="md-toc__item">
+                      <a href="#section-2" class="md-toc__link" data-md-level="2">
+                        Section 2
+                      </a>
+                        <ul class="md-toc__list">
+                            <li class="md-toc__item">
+                              <a href="#sub-section-21" class="md-toc__link" data-md-level="3">
+                                Sub-Section 2.1
+                              </a>
+                            </li>
+                            <li class="md-toc__item">
+                              <a href="#sub-section-22" class="md-toc__link" data-md-level="3">
+                                Sub-Section 2.2
+                              </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="md-toc__item">
+                      <a href="#section-3" class="md-toc__link" data-md-level="2">
+                        Section 3
+                      </a>
+                    </li>
+                    <li class="md-toc__item">
+                      <a href="#section-4" class="md-toc__link" data-md-level="2">
+                        Section 4
+                      </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+      </div>
     </div>
-    <!-- <div id="footer" class="rst-content">
-      Built with mkdocs v1.6.1 (2025-02-10 18:39:39.147446+00:00)
-    </div> -->
+  </div>
+</nav>
+      </aside>
+    </div>
+
+    <!-- Footer - Full width outside container -->
+    <footer class="md-footer">
+      Built with <a href="https://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/durera/mkdocs-carbon">Carbon theme</a>
+    </footer>
   </body>
 </html>
