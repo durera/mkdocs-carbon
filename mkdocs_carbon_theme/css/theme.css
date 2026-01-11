@@ -99,6 +99,9 @@
     --layer-01: #393939;
     --layer-02: #525252;
     --border-subtle: #525252;
+    /* Dark theme link colors - Carbon blue-40/30 for better contrast */
+    --link-color: #78a9ff;        /* blue-40 - WCAG AAA: 9.54:1 */
+    --link-hover-color: #a6c8ff;  /* blue-30 - WCAG AAA: 12.68:1 */
 }
 
 [data-carbon-theme="g100"] {
@@ -109,6 +112,9 @@
     --layer-01: #262626;
     --layer-02: #393939;
     --border-subtle: #393939;
+    /* Dark theme link colors - Carbon blue-40/30 for better contrast */
+    --link-color: #78a9ff;        /* blue-40 - WCAG AAA: 10.80:1 */
+    --link-hover-color: #a6c8ff;  /* blue-30 - WCAG AAA: 14.36:1 */
 }
 
 /* ============================================================================
@@ -708,6 +714,17 @@ blockquote p:last-child {
 .rst-content .admonition .admonition-title {
     background-color: #0f62fe;
     color: #ffffff;
+}
+
+/* Dark theme admonition title colors - use lighter blues for better contrast */
+[data-carbon-theme="g90"] .rst-content .note .admonition-title,
+[data-carbon-theme="g90"] .rst-content .admonition .admonition-title,
+[data-carbon-theme="g90"] .rst-content .bug .admonition-title,
+[data-carbon-theme="g100"] .rst-content .note .admonition-title,
+[data-carbon-theme="g100"] .rst-content .admonition .admonition-title,
+[data-carbon-theme="g100"] .rst-content .bug .admonition-title {
+    background-color: #0f62fe;
+    border-left-color: #78a9ff;
 }
 
 /* Light theme specific */
@@ -1456,6 +1473,17 @@ cds-tabs {
     align-items: center;
     justify-content: center;
     z-index: 10;
+}
+
+/* Dark theme copy button */
+[data-carbon-theme="g90"] .md-code-copy,
+[data-carbon-theme="g100"] .md-code-copy {
+    background-color: rgba(57, 57, 57, 0.9);
+}
+
+[data-carbon-theme="g90"] .md-code-copy:hover,
+[data-carbon-theme="g100"] .md-code-copy:hover {
+    background-color: rgba(82, 82, 82, 1);
 }
 
 .md-code-copy svg {
