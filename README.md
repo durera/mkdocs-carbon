@@ -58,9 +58,7 @@ Usage
 theme:
   name: carbon
   prefix: Durera
-  theme_header: g100
-  theme_sidenav: g90
-  theme_toggle: true  # Enable theme switcher (default: true)
+  theme_toggle: true
   header_nav_items:
     - title: View on Github
       url: https://github.com/durera/mkdocs-carbon
@@ -71,7 +69,7 @@ theme:
 
 markdown_extensions:
   - toc:
-      permalink: "¤"
+      permalink: true
 ```
 
 ### Theme Switcher
@@ -137,8 +135,8 @@ The default `prefix` is **Carbon**, this is what appears before the **Site Title
 ### Carbon Theme Selection
 Easily switch between Carbon themes using `theme_sidenav` and `theme_header`, they can be set to `white`, `g10`, `g90`, or `g100`, by default the header uses **g100**, and the side navigation **g90**.
 
-![alt text](docs/images/themes-1.png)
-![alt text](docs/images/themes-2.png)
+![alt text](docs/images/themes-3.png)
+![alt text](docs/images/themes-3.png)
 
 ### Header Navigation Menu
 The header navigation menu can be enabled by defining `header_nav_items` as a list of objects with `url` and `title`.  Optionally control where the links open using `target`, or set a navigation item as active by adding `active` set to `true`.

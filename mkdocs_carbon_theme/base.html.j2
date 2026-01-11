@@ -47,9 +47,9 @@
     {% endfor %}
   </head>
 
-  <body class="md-grid">
+  <body class="md-grid" data-theme-default="{{ config.theme.theme_default | default('g90') }}">
     <!-- Header -->
-    <cds-header aria-label="{{ config.site_name }}" class="cds-theme-zone-{{ config.theme.theme_header }} md-header">
+    <cds-header aria-label="{{ config.site_name }}" class="md-header">
       <cds-header-menu-button button-label-active="Close menu" button-label-inactive="Open menu"></cds-header-menu-button>
       <cds-header-name href="{{ base_url }}" prefix="{{ config.theme.prefix }}">{{ config.site_name }}</cds-header-name>
 
@@ -91,7 +91,7 @@
       <aside class="md-sidebar md-sidebar--primary" data-md-component="sidebar">
         <div class="md-sidebar__scrollwrap">
           <div class="md-sidebar__inner">
-            <cds-side-nav aria-label="Side navigation" class="cds-theme-zone-{{ config.theme.theme_sidenav }}">
+            <cds-side-nav aria-label="Side navigation">
               <cds-side-nav-items>
                 {% for nav_item in nav %}
                   {% include "nav.html.j2" %}

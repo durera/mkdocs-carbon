@@ -439,9 +439,41 @@ a:visited {
 }
 
 a.headerlink {
-    margin-left: 0.25em;
+    margin-left: 0.5em;
     opacity: 0;
     transition: opacity var(--transition-fast);
+    text-decoration: none;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+a.headerlink::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%230f62fe'%3E%3Cpath d='M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z'/%3E%3Cpath d='M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Hide the default ¶ symbol */
+a.headerlink {
+    font-size: 0;
+}
+
+/* Theme-adaptive link icon colors */
+[data-carbon-theme="white"] a.headerlink::before,
+[data-carbon-theme="g10"] a.headerlink::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%230f62fe'%3E%3Cpath d='M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z'/%3E%3Cpath d='M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z'/%3E%3C/svg%3E");
+}
+
+[data-carbon-theme="g90"] a.headerlink::before,
+[data-carbon-theme="g100"] a.headerlink::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='%2378a9ff'%3E%3Cpath d='M29.25,6.76a6,6,0,0,0-8.5,0l1.42,1.42a4,4,0,1,1,5.67,5.67l-8,8a4,4,0,1,1-5.67-5.66l1.41-1.42-1.41-1.42-1.42,1.42a6,6,0,0,0,0,8.5A6,6,0,0,0,17,25a6,6,0,0,0,4.27-1.76l8-8A6,6,0,0,0,29.25,6.76Z'/%3E%3Cpath d='M4.19,24.82a4,4,0,0,1,0-5.67l8-8a4,4,0,0,1,5.67,0A3.94,3.94,0,0,1,19,14a4,4,0,0,1-1.17,2.85L15.71,19l1.42,1.42,2.12-2.12a6,6,0,0,0-8.51-8.51l-8,8a6,6,0,0,0,0,8.51A6,6,0,0,0,7,28a6.07,6.07,0,0,0,4.28-1.76L9.86,24.82A4,4,0,0,1,4.19,24.82Z'/%3E%3C/svg%3E");
 }
 
 h1:hover a.headerlink,
@@ -524,7 +556,7 @@ h4:hover a.headerlink {
 blockquote {
     position: relative;
     margin: var(--spacing-06) 0;
-    padding: var(--spacing-05) var(--spacing-06);
+    padding: var(--spacing-03) var(--spacing-06) var(--spacing-05);
     border-left: 4px solid var(--interactive);
     background-color: var(--layer-01);
     border-radius: 0 var(--radius-md) var(--radius-md) 0;
@@ -536,6 +568,10 @@ blockquote {
 [data-carbon-theme="g10"] blockquote {
     background-color: #edf5ff;
     border-left-color: #0f62fe;
+}
+
+blockquote p:first-child {
+    margin-top: 0;
 }
 
 blockquote p:last-child {
@@ -886,8 +922,50 @@ cds-header {
     z-index: 10000;
 }
 
+/* Header theme adaptation */
+[data-carbon-theme="white"] cds-header,
+[data-carbon-theme="g10"] cds-header {
+    --cds-background: #ffffff;
+    --cds-layer: #f4f4f4;
+    --cds-text-primary: #161616;
+    --cds-text-secondary: #525252;
+    --cds-link-primary: #0f62fe;
+    --cds-border-subtle: #e0e0e0;
+}
+
+[data-carbon-theme="g90"] cds-header,
+[data-carbon-theme="g100"] cds-header {
+    --cds-background: #161616;
+    --cds-layer: #262626;
+    --cds-text-primary: #f4f4f4;
+    --cds-text-secondary: #c6c6c6;
+    --cds-link-primary: #78a9ff;
+    --cds-border-subtle: #393939;
+}
+
 cds-side-nav {
     display: block;
+}
+
+/* Side navigation theme adaptation */
+[data-carbon-theme="white"] cds-side-nav,
+[data-carbon-theme="g10"] cds-side-nav {
+    --cds-background: #f4f4f4;
+    --cds-layer: #ffffff;
+    --cds-text-primary: #161616;
+    --cds-text-secondary: #525252;
+    --cds-link-primary: #0f62fe;
+    --cds-border-subtle: #e0e0e0;
+}
+
+[data-carbon-theme="g90"] cds-side-nav,
+[data-carbon-theme="g100"] cds-side-nav {
+    --cds-background: #393939;
+    --cds-layer: #525252;
+    --cds-text-primary: #f4f4f4;
+    --cds-text-secondary: #c6c6c6;
+    --cds-link-primary: #78a9ff;
+    --cds-border-subtle: #525252;
 }
 
 /* Make side-nav fill container width and height in mobile mode */

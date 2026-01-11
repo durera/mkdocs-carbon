@@ -9,9 +9,8 @@ edit_uri: blob/master/docs/
 
 nav:
   - "Carbon Theme": index.md
-  - "Group":
-    - "Page 2": section2/page2.md
-    - "Page 3": section2/page3.md
+  - "Page 2": section2/page2.md
+  - "Page 3": section2/page3.md
 
 theme:
   name: carbon
@@ -19,8 +18,9 @@ theme:
   # name: null
   # custom_dir: 'mkdocs_carbon_theme'
   prefix: Durera
-  theme_header: g100
-  theme_sidenav: g90
+  theme_toggle: true
+  theme_default: g100  # Options: white, g10, g90, g100
+
   header_nav_items:
     - title: View on Github
       url: https://github.com/durera/mkdocs-carbon
@@ -31,5 +31,7 @@ theme:
 
 markdown_extensions:
   - toc:
-      permalink: "¤"
+      permalink: true
   - admonition
+
+# Made with Bob

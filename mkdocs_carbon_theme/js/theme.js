@@ -302,10 +302,16 @@
         const toggleMenu = document.querySelector('.md-theme-toggle__menu');
         const themeOptions = document.querySelectorAll('.md-theme-toggle__option');
 
-        if (!toggleButton || !toggleMenu) return;
+        // Get default theme from body data attribute, fallback to g90 (Dark Gray)
+        const defaultTheme = document.body.getAttribute('data-theme-default') || 'g90';
 
-        // Load saved theme preference, default to g90 (Dark Gray)
-        const savedTheme = localStorage.getItem('mkdocs-carbon-theme') || 'g90';
+        // Load saved theme preference, or use configured default
+        const savedTheme = localStorage.getItem('mkdocs-carbon-theme') || defaultTheme;
+
+        // Apply theme immediately (even if toggle is disabled)
+        applyTheme(savedTheme);
+
+        if (!toggleButton || !toggleMenu) return;
 
         // Apply theme immediately
         applyTheme(savedTheme);

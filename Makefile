@@ -7,7 +7,7 @@ clean:
 	rm -rf dist/mkdocs_carbon-*
 
 install:
-	. .venv/bin/activate && python -m pip install -e .
+	. .venv/bin/activate && python -m pip install -e .[dev]
 
 build: clean
 	. .venv/bin/activate && python -m build .
