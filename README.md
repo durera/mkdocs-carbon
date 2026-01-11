@@ -136,7 +136,7 @@ The default `prefix` is **Carbon**, this is what appears before the **Site Title
 Easily switch between Carbon themes using `theme_sidenav` and `theme_header`, they can be set to `white`, `g10`, `g90`, or `g100`, by default the header uses **g100**, and the side navigation **g90**.
 
 ![alt text](docs/images/themes-3.png)
-![alt text](docs/images/themes-3.png)
+![alt text](docs/images/themes-4.png)
 
 ### Header Navigation Menu
 The header navigation menu can be enabled by defining `header_nav_items` as a list of objects with `url` and `title`.  Optionally control where the links open using `target`, or set a navigation item as active by adding `active` set to `true`.
