@@ -7,7 +7,7 @@ clean:
 	rm -rf dist/mkdocs_carbon-*
 
 install:
-	. .venv/bin/activate && python -m pip install .
+	. .venv/bin/activate && python -m pip install -e .[dev]
 
 build: clean
 	. .venv/bin/activate && python -m build .
@@ -24,4 +24,4 @@ docs-build:
 	. .venv/bin/activate && mkdocs build --verbose --clean --strict
 
 docs-serve:
-	. .venv/bin/activate && mkdocs serve -w docs -w mkdocs_carbon_theme
+	. .venv/bin/activate && mkdocs serve -w docs -w mkdocs_carbon_theme --livereload --dev-addr localhost:8010

@@ -6,8 +6,33 @@ mkdocs-carbon
 
 [Carbon Design System](https://github.com/carbon-design-system/carbon) theme for [mkdocs](https://github.com/mkdocs/mkdocs).
 
-Very much in beta state right now, contributions welcomed.
+## What's New
 
+### v2.0 - Modernization 🎉
+
+**Phase 1 & 2: Layout & Navigation**
+- **Three-column responsive layout** - Navigation, content, and table of contents
+- **Sticky TOC sidebar** - Always visible with automatic scroll highlighting
+- **Navigation state persistence** - Remembers expanded/collapsed menu items
+- **Previous/Next navigation** - Footer links for easy page navigation
+- **Improved mobile experience** - Touch-optimized with slide-out drawer
+- **Optimized content width** - Maximum 900px for comfortable reading
+
+**Phase 3: Interactive Features**
+- **Back to top button** - Floating button appears after scrolling
+- **Copy to clipboard** - One-click code copying with visual feedback
+- **Enhanced admonitions** - Icons for all admonition types
+- **Keyboard shortcuts** - Press `/` to focus search
+- **Smooth scrolling** - Enhanced anchor navigation
+
+**Phase 4: Polish & Optimization**
+- **Carbon type scale** - Complete IBM typography system
+- **100+ CSS variables** - Full theming control
+- **Reduced motion support** - Respects accessibility preferences
+- **Enhanced code blocks** - Better styling and syntax highlighting
+- **Performance optimized** - Efficient CSS and JavaScript
+
+### Previous Releases
 - `v1.3` Support for Accordion component & edit link in header
 - `v1.2` Support for Header Navigation Menu
 - `v1.1` Support for Search
@@ -33,8 +58,7 @@ Usage
 theme:
   name: carbon
   prefix: Durera
-  theme_header: g100
-  theme_sidenav: g90
+  theme_toggle: true
   header_nav_items:
     - title: View on Github
       url: https://github.com/durera/mkdocs-carbon
@@ -45,8 +69,62 @@ theme:
 
 markdown_extensions:
   - toc:
-      permalink: "¤"
+      permalink: true
 ```
+
+### Theme Switcher
+The theme now includes a built-in theme switcher in the header that allows users to toggle between Carbon's four theme zones:
+- **Light** (white) - Pure white background
+- **Light Gray** (g10) - Light gray background
+- **Dark Gray** (g90) - Dark gray background *(default)*
+- **Dark** (g100) - Pure dark background
+
+The default theme is **Dark Gray (g90)**, which provides excellent readability in most lighting conditions. The selected theme is automatically saved to localStorage and persists across page loads. Users can click the moon icon in the header to access the theme menu.
+
+To disable the theme switcher, set `theme_toggle: false` in your `mkdocs.yml`.
+
+
+Features
+-------------------------------------------------------------------------------
+
+### Modern Three-Column Layout
+- **Left Sidebar**: Collapsible navigation with state persistence
+- **Center Content**: Optimized reading width (max 900px) with proper spacing
+- **Right Sidebar**: Sticky table of contents with automatic scroll highlighting
+
+### Responsive Design
+- **Desktop (≥1280px)**: Full three-column layout
+- **Tablet (768px-1279px)**: Two-column layout (nav + content, TOC hidden)
+- **Mobile (<768px)**: Single column with slide-out navigation drawer
+
+### Navigation Features
+- **State Persistence**: Navigation menu remembers expanded/collapsed items using localStorage
+- **Active Page Highlighting**: Current page is clearly marked in navigation
+- **Smooth Transitions**: Elegant expand/collapse animations
+- **Mobile-Friendly**: Touch-optimized with swipe-to-close drawer
+
+### Table of Contents
+- **Sticky Positioning**: Always visible while scrolling on desktop
+- **Scroll Spy**: Automatically highlights current section
+- **Nested Headings**: Supports H1, H2, H3, and H4 levels
+- **Smooth Scrolling**: Click any heading for smooth navigation
+
+### Navigation Footer
+- **Previous/Next Links**: Easy navigation between pages
+- **Automatic Generation**: Built from your nav structure
+- **Responsive Layout**: Stacks vertically on mobile
+
+### Enhanced User Experience
+- **Keyboard Shortcuts**: Press `/` to focus search
+- **Smooth Scrolling**: All anchor links scroll smoothly
+- **Print-Friendly**: Optimized print stylesheet
+- **Accessibility**: ARIA labels and semantic HTML
+
+### Carbon Design Integration
+- **Design Tokens**: Uses Carbon spacing, typography, and color scales
+- **IBM Plex Fonts**: IBM Plex Sans and Mono included
+- **Theme Zones**: Support for white, g10, g90, and g100 themes
+- **Carbon Components**: Full integration with Carbon web components
 
 
 Theme Configuration
@@ -57,13 +135,103 @@ The default `prefix` is **Carbon**, this is what appears before the **Site Title
 ### Carbon Theme Selection
 Easily switch between Carbon themes using `theme_sidenav` and `theme_header`, they can be set to `white`, `g10`, `g90`, or `g100`, by default the header uses **g100**, and the side navigation **g90**.
 
-![alt text](docs/images/themes-1.png)
-![alt text](docs/images/themes-2.png)
+![alt text](docs/images/themes-3.png)
+![alt text](docs/images/themes-3.png)
 
 ### Header Navigation Menu
 The header navigation menu can be enabled by defining `header_nav_items` as a list of objects with `url` and `title`.  Optionally control where the links open using `target`, or set a navigation item as active by adding `active` set to `true`.
 
 ![alt text](docs/images/header-nav-items.png)
+
+### Layout Customization
+The modern layout is automatically enabled and responsive. Customize the theme using CSS variables in your `extra_css`:
+
+#### Layout Dimensions
+```css
+:root {
+    --sidebar-width: 256px;        /* Left navigation width */
+    --content-max-width: 900px;    /* Maximum content width */
+    --toc-width: 256px;            /* Right TOC width */
+    --header-height: 48px;         /* Header height */
+}
+```
+
+#### Colors
+```css
+:root {
+    --link-color: #0f62fe;         /* Primary link color */
+    --link-hover-color: #0043ce;   /* Link hover color */
+    --text-primary: #161616;       /* Primary text color */
+    --text-secondary: #525252;     /* Secondary text color */
+    --background: #ffffff;         /* Page background */
+    --border-subtle: #e0e0e0;      /* Border color */
+}
+```
+
+#### Typography
+```css
+:root {
+    --font-size-03: 1rem;          /* Body text size */
+    --font-size-07: 2rem;          /* H2 heading size */
+    --line-height-normal: 1.5;     /* Body line height */
+    --font-weight-light: 300;      /* Light font weight */
+}
+```
+
+#### Spacing
+```css
+:root {
+    --spacing-05: 1rem;            /* Standard spacing unit */
+    --spacing-06: 1.5rem;          /* Medium spacing */
+    --spacing-07: 2rem;            /* Large spacing */
+}
+```
+
+### Advanced Customization
+
+#### Custom Theme Colors
+Create a custom theme by overriding Carbon theme variables:
+
+```css
+[data-carbon-theme="custom"] {
+    --text-primary: #1a1a1a;
+    --background: #fafafa;
+    --layer-01: #f0f0f0;
+    --link-color: #0066cc;
+}
+```
+
+#### Disable Features
+Hide specific features using CSS:
+
+```css
+/* Hide back to top button */
+.md-back-to-top {
+    display: none !important;
+}
+
+/* Hide copy buttons on code blocks */
+.md-code-copy {
+    display: none !important;
+}
+
+/* Hide navigation footer */
+.md-footer-nav {
+    display: none !important;
+}
+```
+
+#### Custom Breakpoints
+Adjust responsive breakpoints:
+
+```css
+/* Custom tablet breakpoint */
+@media (max-width: 1024px) {
+    .md-sidebar--secondary {
+        display: none;
+    }
+}
+```
 
 
 Optional Page Metadata

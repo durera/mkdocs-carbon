@@ -5,6 +5,5 @@ include_search_page: true
 # Defaults for additional properties
 # -----------------------------------------------------------------------------
 prefix: Carbon
+theme_default: g90
 
-theme_header: g100
-theme_sidenav: g90

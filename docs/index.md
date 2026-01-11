@@ -1,4 +1,54 @@
-# Carbon Design System Theme for Mkdocs
+# Carbon Design System Theme for MkDocs
+
+Welcome to the modernized Carbon Design System theme for MkDocs! This theme brings the power and elegance of IBM's Carbon Design System to your documentation with a modern, responsive three-column layout.
+
+## ✨ What's New in v2.0
+
+The theme has been completely modernized with a layout comparable to Material for MkDocs while maintaining the Carbon Design System aesthetic.
+
+### Phase 1 & 2: Layout & Navigation
+- **Three-column responsive layout** - Navigation, content, and table of contents
+- **Sticky TOC sidebar** - Always visible with automatic scroll highlighting
+- **Navigation state persistence** - Remembers your expanded menu items
+- **Previous/Next navigation** - Easy page-to-page navigation
+- **Improved mobile experience** - Touch-optimized with slide-out drawer
+- **Optimized readability** - Content width limited to 900px for comfortable reading
+
+### Phase 3: Interactive Features
+- **Back to top button** - Floating action button for quick navigation
+- **Copy to clipboard** - One-click code copying with visual feedback
+- **Enhanced admonitions** - Icons for all admonition types (note, tip, warning, danger)
+- **Keyboard shortcuts** - Press `/` to focus search
+- **Smooth scrolling** - Enhanced anchor navigation
+
+### Phase 4: Polish & Optimization
+- **Carbon type scale** - Complete IBM typography system with 8 font sizes
+- **100+ CSS variables** - Full control over colors, spacing, typography
+- **Reduced motion support** - Respects `prefers-reduced-motion` for accessibility
+- **Enhanced code blocks** - Gradient backgrounds, better syntax highlighting
+- **Performance optimized** - Efficient CSS selectors and minimal JavaScript
+
+## 🎨 Modern Layout
+
+The new layout provides an optimal reading experience across all devices:
+
+### Desktop (≥1280px)
+- Left sidebar: Collapsible navigation (256px)
+- Center: Content area (max 900px)
+- Right sidebar: Sticky table of contents (256px)
+
+### Tablet (768px-1279px)
+- Left sidebar: Collapsible navigation
+- Center: Full-width content
+- TOC: Hidden (integrated into content flow)
+
+### Mobile (<768px)
+- Slide-out navigation drawer
+- Full-width content
+- Collapsible TOC at top of page
+
+## 📚 Getting Started
+
 Lorem ipsum odor amet, `consectetuer adipiscing elit`. Volutpat curae dis elit dolor [elementum nullam eu fusce](section2/page2.md). Ac tellus varius netus cursus lacus pulvinar tellus aliquam habitant. Cras odio vitae aptent netus dis mi maecenas. Cursus habitant suspendisse facilisis, mollis netus platea nisi. Sociosqu magnis diam gravida diam quisque [bibendum auctor varius](section2/page3.md). Vel molestie ultrices nisi finibus diam elit placerat dolor. Euismod ut conubia metus hendrerit taciti posuere placerat elementum.
 
 !!! important
