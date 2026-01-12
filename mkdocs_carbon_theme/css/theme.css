@@ -679,7 +679,11 @@ blockquote p:last-child {
     }
 }
 
-/* Admonitions - Theme Adaptive */
+/* ============================================================================
+   Admonitions - Carbon Design System Notification Pattern
+   ============================================================================ */
+
+/* Base admonition styling */
 .rst-content .admonition,
 .rst-content .note,
 .rst-content .warning,
@@ -691,143 +695,171 @@ blockquote p:last-child {
 .rst-content .bug {
     padding: var(--spacing-05);
     margin-bottom: var(--spacing-06);
-    border-radius: var(--radius-md);
-    border-left: 4px solid;
+    border-radius: 0;
+    border-left: 3px solid;
     background-color: var(--layer-01);
     color: var(--text-primary);
 }
 
 .rst-content .admonition-title {
     font-weight: 600;
-    margin: calc(-1 * var(--spacing-05)) calc(-1 * var(--spacing-05)) var(--spacing-05);
-    padding: var(--spacing-03) var(--spacing-05);
-    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    margin: calc(-1 * var(--spacing-05)) calc(-1 * var(--spacing-05)) var(--spacing-04);
+    padding: var(--spacing-04) var(--spacing-05);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-03);
 }
 
-/* Note / Info - Blue */
+/* Note / Info / Bug - Blue (Informational) */
 .rst-content .note,
-.rst-content .admonition {
-    border-left-color: #0f62fe;
+.rst-content .admonition,
+.rst-content .bug {
+    border-left-color: #0f62fe;  /* blue-60 */
 }
 
 .rst-content .note .admonition-title,
-.rst-content .admonition .admonition-title {
-    background-color: #0f62fe;
-    color: #ffffff;
+.rst-content .admonition .admonition-title,
+.rst-content .bug .admonition-title {
+    color: #0f62fe;  /* blue-60 */
+    background-color: transparent;
 }
 
-/* Dark theme admonition title colors - use lighter blues for better contrast */
+/* Light theme - subtle blue background */
+[data-carbon-theme="white"] .rst-content .note,
+[data-carbon-theme="white"] .rst-content .admonition,
+[data-carbon-theme="white"] .rst-content .bug,
+[data-carbon-theme="g10"] .rst-content .note,
+[data-carbon-theme="g10"] .rst-content .admonition,
+[data-carbon-theme="g10"] .rst-content .bug {
+    background-color: #edf5ff;  /* blue-10 */
+}
+
+/* Dark theme - use layer with lighter border */
+[data-carbon-theme="g90"] .rst-content .note,
+[data-carbon-theme="g90"] .rst-content .admonition,
+[data-carbon-theme="g90"] .rst-content .bug,
+[data-carbon-theme="g100"] .rst-content .note,
+[data-carbon-theme="g100"] .rst-content .admonition,
+[data-carbon-theme="g100"] .rst-content .bug {
+    background-color: var(--layer-02);
+    border-left-color: #78a9ff;  /* blue-40 */
+}
+
 [data-carbon-theme="g90"] .rst-content .note .admonition-title,
 [data-carbon-theme="g90"] .rst-content .admonition .admonition-title,
 [data-carbon-theme="g90"] .rst-content .bug .admonition-title,
 [data-carbon-theme="g100"] .rst-content .note .admonition-title,
 [data-carbon-theme="g100"] .rst-content .admonition .admonition-title,
 [data-carbon-theme="g100"] .rst-content .bug .admonition-title {
-    background-color: #0f62fe;
-    border-left-color: #78a9ff;
+    color: #78a9ff;  /* blue-40 */
 }
 
-/* Light theme specific */
-[data-carbon-theme="white"] .rst-content .note,
-[data-carbon-theme="white"] .rst-content .admonition,
-[data-carbon-theme="g10"] .rst-content .note,
-[data-carbon-theme="g10"] .rst-content .admonition {
-    background-color: #edf5ff;
-}
-
-/* Tip / Important - Green */
+/* Tip / Important - Green (Success) */
 .rst-content .tip,
 .rst-content .important {
-    border-left-color: #24a148;
+    border-left-color: #24a148;  /* green-50 */
 }
 
 .rst-content .tip .admonition-title,
 .rst-content .important .admonition-title {
-    background-color: #24a148;
-    color: #ffffff;
+    color: #24a148;  /* green-50 */
+    background-color: transparent;
 }
 
+/* Light theme - subtle green background */
 [data-carbon-theme="white"] .rst-content .tip,
 [data-carbon-theme="white"] .rst-content .important,
 [data-carbon-theme="g10"] .rst-content .tip,
 [data-carbon-theme="g10"] .rst-content .important {
-    background-color: #d9fbfb;
+    background-color: #defbe6;  /* green-10 */
 }
 
-/* Warning / Caution - Yellow */
+/* Dark theme - use layer with lighter border */
+[data-carbon-theme="g90"] .rst-content .tip,
+[data-carbon-theme="g90"] .rst-content .important,
+[data-carbon-theme="g100"] .rst-content .tip,
+[data-carbon-theme="g100"] .rst-content .important {
+    background-color: var(--layer-02);
+    border-left-color: #42be65;  /* green-40 */
+}
+
+[data-carbon-theme="g90"] .rst-content .tip .admonition-title,
+[data-carbon-theme="g90"] .rst-content .important .admonition-title,
+[data-carbon-theme="g100"] .rst-content .tip .admonition-title,
+[data-carbon-theme="g100"] .rst-content .important .admonition-title {
+    color: #42be65;  /* green-40 */
+}
+
+/* Warning / Caution - Orange (Warning) */
 .rst-content .warning,
 .rst-content .caution {
-    border-left-color: #f1c21b;
+    border-left-color: #ff832b;  /* orange-40 */
 }
 
 .rst-content .warning .admonition-title,
 .rst-content .caution .admonition-title {
-    background-color: #f1c21b;
-    color: #161616;
+    color: #ff832b;  /* orange-40 */
+    background-color: transparent;
 }
 
+/* Light theme - subtle orange background */
 [data-carbon-theme="white"] .rst-content .warning,
 [data-carbon-theme="white"] .rst-content .caution,
 [data-carbon-theme="g10"] .rst-content .warning,
 [data-carbon-theme="g10"] .rst-content .caution {
-    background-color: #fff8e1;
+    background-color: #fff2e8;  /* orange-10 */
 }
 
-/* Danger / Error - Red */
+/* Dark theme - use layer with lighter border */
+[data-carbon-theme="g90"] .rst-content .warning,
+[data-carbon-theme="g90"] .rst-content .caution,
+[data-carbon-theme="g100"] .rst-content .warning,
+[data-carbon-theme="g100"] .rst-content .caution {
+    background-color: var(--layer-02);
+    border-left-color: #ff832b;  /* orange-40 */
+}
+
+[data-carbon-theme="g90"] .rst-content .warning .admonition-title,
+[data-carbon-theme="g90"] .rst-content .caution .admonition-title,
+[data-carbon-theme="g100"] .rst-content .warning .admonition-title,
+[data-carbon-theme="g100"] .rst-content .caution .admonition-title {
+    color: #ff832b;  /* orange-40 */
+}
+
+/* Danger / Error - Red (Error) */
 .rst-content .danger,
 .rst-content .error {
-    border-left-color: #da1e28;
+    border-left-color: #da1e28;  /* red-60 */
 }
 
 .rst-content .danger .admonition-title,
 .rst-content .error .admonition-title {
-    background-color: #da1e28;
-    color: #ffffff;
+    color: #da1e28;  /* red-60 */
+    background-color: transparent;
 }
 
+/* Light theme - subtle red background */
 [data-carbon-theme="white"] .rst-content .danger,
 [data-carbon-theme="white"] .rst-content .error,
 [data-carbon-theme="g10"] .rst-content .danger,
 [data-carbon-theme="g10"] .rst-content .error {
-    background-color: #fff1f1;
+    background-color: #fff1f1;  /* red-10 */
 }
 
-/* Bug - Blue (similar to info but distinct) */
-.rst-content .bug {
-    border-left-color: #0f62fe;
-}
-
-.rst-content .bug .admonition-title {
-    background-color: #0f62fe;
-    color: #ffffff;
-}
-
-[data-carbon-theme="white"] .rst-content .bug,
-[data-carbon-theme="g10"] .rst-content .bug {
-    background-color: #edf5ff;
-}
-
-/* Dark theme enhancements */
-[data-carbon-theme="g90"] .rst-content .admonition,
-[data-carbon-theme="g90"] .rst-content .note,
-[data-carbon-theme="g90"] .rst-content .warning,
-[data-carbon-theme="g90"] .rst-content .tip,
-[data-carbon-theme="g90"] .rst-content .important,
-[data-carbon-theme="g90"] .rst-content .caution,
+/* Dark theme - use layer with lighter border */
 [data-carbon-theme="g90"] .rst-content .danger,
 [data-carbon-theme="g90"] .rst-content .error,
-[data-carbon-theme="g90"] .rst-content .bug,
-[data-carbon-theme="g100"] .rst-content .admonition,
-[data-carbon-theme="g100"] .rst-content .note,
-[data-carbon-theme="g100"] .rst-content .warning,
-[data-carbon-theme="g100"] .rst-content .tip,
-[data-carbon-theme="g100"] .rst-content .important,
-[data-carbon-theme="g100"] .rst-content .caution,
 [data-carbon-theme="g100"] .rst-content .danger,
-[data-carbon-theme="g100"] .rst-content .error,
-[data-carbon-theme="g100"] .rst-content .bug {
+[data-carbon-theme="g100"] .rst-content .error {
     background-color: var(--layer-02);
-    border-left-width: 3px;
+    border-left-color: #fa4d56;  /* red-50 */
+}
+
+[data-carbon-theme="g90"] .rst-content .danger .admonition-title,
+[data-carbon-theme="g90"] .rst-content .error .admonition-title,
+[data-carbon-theme="g100"] .rst-content .danger .admonition-title,
+[data-carbon-theme="g100"] .rst-content .error .admonition-title {
+    color: #fa4d56;  /* red-50 */
 }
 
 .rst-content .admonition p:last-child {
@@ -1536,27 +1568,74 @@ cds-tabs {
     background-position: center;
 }
 
+/* Note / Info - Blue icons (light themes) - Default for generic .admonition */
+.rst-content .admonition .admonition-title::before,
 .rst-content .note .admonition-title::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f62fe'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/%3E%3C/svg%3E");
 }
 
+/* Note / Info - Blue icons (dark themes) */
+[data-carbon-theme="g90"] .rst-content .admonition .admonition-title::before,
+[data-carbon-theme="g90"] .rst-content .note .admonition-title::before,
+[data-carbon-theme="g100"] .rst-content .admonition .admonition-title::before,
+[data-carbon-theme="g100"] .rst-content .note .admonition-title::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2378a9ff'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/%3E%3C/svg%3E");
+}
+
+/* Tip / Important - Green icons (light themes) */
 .rst-content .tip .admonition-title::before,
 .rst-content .important .admonition-title::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2324a148'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
 }
 
+/* Tip / Important - Green icons (dark themes) */
+[data-carbon-theme="g90"] .rst-content .tip .admonition-title::before,
+[data-carbon-theme="g90"] .rst-content .important .admonition-title::before,
+[data-carbon-theme="g100"] .rst-content .tip .admonition-title::before,
+[data-carbon-theme="g100"] .rst-content .important .admonition-title::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2342be65'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+}
+
+/* Warning / Caution - Orange icons (all themes) - Must come after generic .admonition */
+.rst-content .admonition.warning .admonition-title::before,
 .rst-content .warning .admonition-title::before,
+.rst-content .admonition.caution .admonition-title::before,
 .rst-content .caution .admonition-title::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23161616'%3E%3Cpath d='M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff832b'%3E%3Cpath d='M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z'/%3E%3C/svg%3E") !important;
 }
 
+/* Danger / Error - Red icons (light themes) - Must come after generic .admonition */
+.rst-content .admonition.danger .admonition-title::before,
 .rst-content .danger .admonition-title::before,
+.rst-content .admonition.error .admonition-title::before,
 .rst-content .error .admonition-title::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23da1e28'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/%3E%3C/svg%3E") !important;
 }
 
+/* Danger / Error - Red icons (dark themes) */
+[data-carbon-theme="g90"] .rst-content .admonition.danger .admonition-title::before,
+[data-carbon-theme="g90"] .rst-content .danger .admonition-title::before,
+[data-carbon-theme="g90"] .rst-content .admonition.error .admonition-title::before,
+[data-carbon-theme="g90"] .rst-content .error .admonition-title::before,
+[data-carbon-theme="g100"] .rst-content .admonition.danger .admonition-title::before,
+[data-carbon-theme="g100"] .rst-content .danger .admonition-title::before,
+[data-carbon-theme="g100"] .rst-content .admonition.error .admonition-title::before,
+[data-carbon-theme="g100"] .rst-content .error .admonition-title::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fa4d56'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/%3E%3C/svg%3E") !important;
+}
+
+/* Bug - Blue icons (light themes) - Must come after generic .admonition */
+.rst-content .admonition.bug .admonition-title::before,
 .rst-content .bug .admonition-title::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f62fe'%3E%3Cpath d='M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z'/%3E%3C/svg%3E") !important;
+}
+
+/* Bug - Blue icons (dark themes) */
+[data-carbon-theme="g90"] .rst-content .admonition.bug .admonition-title::before,
+[data-carbon-theme="g90"] .rst-content .bug .admonition-title::before,
+[data-carbon-theme="g100"] .rst-content .admonition.bug .admonition-title::before,
+[data-carbon-theme="g100"] .rst-content .bug .admonition-title::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2378a9ff'%3E%3Cpath d='M20 8h-2.81c-.45-.78-1.07-1.45-1.82-1.96L17 4.41 15.59 3l-2.17 2.17C12.96 5.06 12.49 5 12 5c-.49 0-.96.06-1.41.17L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z'/%3E%3C/svg%3E") !important;
 }
 
 /* ============================================================================
