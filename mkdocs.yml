@@ -8,9 +8,12 @@ repo_url: https://github.com/durera/mkdocs-carbon
 edit_uri: blob/master/docs/
 
 nav:
-  - "Carbon Theme": index.md
-  - "Page 2": section2/page2.md
-  - "Page 3": section2/page3.md
+  - "Home":
+    - "Carbon Theme": index.md
+    - "Page 2": section2/page2.md
+    - "Page 3": section2/page3.md
+  - "Features":
+    - "Full Width Pages": section2/fullwidth.md
 
 theme:
   name: carbon

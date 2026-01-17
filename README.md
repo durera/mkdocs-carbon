@@ -8,35 +8,17 @@ mkdocs-carbon
 
 ## What's New
 
-### v2.0 - Modernization 🎉
-
-**Phase 1 & 2: Layout & Navigation**
-- **Three-column responsive layout** - Navigation, content, and table of contents
-- **Sticky TOC sidebar** - Always visible with automatic scroll highlighting
-- **Navigation state persistence** - Remembers expanded/collapsed menu items
-- **Previous/Next navigation** - Footer links for easy page navigation
-- **Improved mobile experience** - Touch-optimized with slide-out drawer
-- **Optimized content width** - Maximum 900px for comfortable reading
-
-**Phase 3: Interactive Features**
-- **Back to top button** - Floating button appears after scrolling
-- **Copy to clipboard** - One-click code copying with visual feedback
-- **Enhanced admonitions** - Icons for all admonition types
-- **Keyboard shortcuts** - Press `/` to focus search
-- **Smooth scrolling** - Enhanced anchor navigation
-
-**Phase 4: Polish & Optimization**
-- **Carbon type scale** - Complete IBM typography system
-- **100+ CSS variables** - Full theming control
-- **Reduced motion support** - Respects accessibility preferences
-- **Enhanced code blocks** - Better styling and syntax highlighting
-- **Performance optimized** - Efficient CSS and JavaScript
-
-### Previous Releases
-- `v1.3` Support for Accordion component & edit link in header
-- `v1.2` Support for Header Navigation Menu
-- `v1.1` Support for Search
-- `v1.0` Initial Release
+- `v2.1` Per-page widescreen mode support
+- `v2.0` Theme modernization
+    - Three-column responsive layout - Navigation, content, and table of contents
+    - Sticky TOC sidebar - Always visible with automatic scroll highlighting
+    - Improved mobile experience - Touch-optimized with slide-out drawer
+    - Optimized content width - Maximum 900px for comfortable reading
+    - Back to top button - Floating button appears after scrolling
+- `v1.3` Accordion component support & edit link in header
+- `v1.2` Header navigation menu
+- `v1.1` Search support
+- `v1.0` Initial release
 
 
 Examples
@@ -59,6 +41,7 @@ theme:
   name: carbon
   prefix: Durera
   theme_toggle: true
+  theme_default: g100  # Options: white, g10, g90, g100
   header_nav_items:
     - title: View on Github
       url: https://github.com/durera/mkdocs-carbon
@@ -74,6 +57,7 @@ markdown_extensions:
 
 ### Theme Switcher
 The theme now includes a built-in theme switcher in the header that allows users to toggle between Carbon's four theme zones:
+
 - **Light** (white) - Pure white background
 - **Light Gray** (g10) - Light gray background
 - **Dark Gray** (g90) - Dark gray background *(default)*
@@ -248,6 +232,31 @@ It's possible to only set the title for one or both of the entries if you don't 
 
 ### Associate Orphaned Page with Nav
 An orphaned page can be connected to the navigation structure by setting the `nav_title` metadata to the title of the navigation item it should be connected to.
+
+### Widescreen Mode
+Enable full-width content layout for a specific page by setting `widescreen: true` in the page metadata. This hides the table of contents sidebar and expands the content area to use the full available width. Useful for pages with wide tables, diagrams, or other content that benefits from extra horizontal space.
+
+```yaml
+---
+widescreen: true
+---
+
+# My Wide Page
+```
+
+When enabled:
+
+- The right sidebar (table of contents) is hidden
+- Content area expands to full width (up to maximum width constraints)
+- Navigation sidebar remains visible
+- Works seamlessly with the theme's responsive design
+
+Example use cases:
+
+- Landing pages with hero content
+- Wide data tables and matrices
+- Complex diagrams and visualizations
+- Multi-column layouts
 
 
 Fonts
